@@ -1,9 +1,10 @@
 package demo;
 import java.net.MalformedURLException;
+import java.util.concurrent.TimeoutException;
 
 
 public class App {
-    public void getGreeting() throws InterruptedException, MalformedURLException {
+    public void getGreeting() throws InterruptedException, MalformedURLException, TimeoutException {
         
         // This is to remove unnecessary warnings from your console
         System.setProperty("java.util.logging.config.file", "logging.properties");
@@ -13,6 +14,9 @@ public class App {
         //TODO: call your test case functions one after other here
 
         tests.testCase01();
+        tests.testCase02();
+        tests.testCase03();
+        tests.testCase04();
 
         //END Tests
 
@@ -20,7 +24,7 @@ public class App {
         tests.endTest(); // End your test by clearning connections and closing browser
     }
 
-    public static void main(String[] args) throws InterruptedException, MalformedURLException {
+    public static void main(String[] args) throws InterruptedException, MalformedURLException, TimeoutException {
         new App().getGreeting();
     }
 }
